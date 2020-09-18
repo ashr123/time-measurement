@@ -1,6 +1,7 @@
 package il.co.timeMesurment;
 
 import java.util.Objects;
+import java.util.concurrent.Callable;
 import java.util.function.Supplier;
 
 public class DurationCounterWithResult
@@ -15,10 +16,28 @@ public class DurationCounterWithResult
 		return new Result<>(supplier.get(), System.nanoTime() - startTime);
 	}
 
+	public static <T> Result<T> measureAndExecuteCallable(Callable<T> callable) throws Exception
+	{
+		final long startTime = System.nanoTime();
+		return new Result<>(callable.call(), System.nanoTime() - startTime);
+	}
+
+	public static Result<?> measureAndExecute(Runnable runnable)
+	{
+		final long startTime = System.nanoTime();
+		runnable.run();
+		return new Result<>(System.nanoTime() - startTime);
+	}
+
 	public static class Result<T>
 	{
 		private final T result;
 		private final long timeTaken;
+
+		public Result(long timeTaken)
+		{
+			this(null, timeTaken);
+		}
 
 		private Result(T result, long timeTaken)
 		{
