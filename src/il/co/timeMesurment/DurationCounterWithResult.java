@@ -34,7 +34,7 @@ public class DurationCounterWithResult
 		private final T result;
 		private final long timeTaken;
 
-		public Result(long timeTaken)
+		private Result(long timeTaken)
 		{
 			this(null, timeTaken);
 		}
