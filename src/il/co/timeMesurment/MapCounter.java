@@ -21,7 +21,7 @@ public class MapCounter<T>
 		final Long value = startTimes.get(key);
 		if (value == null)
 			throw new IllegalStateException("Didn't start measuring yet!!");
-		return (System.nanoTime() - value) / timeScales.scale;
+		return (System.nanoTime() - value) / timeScales.getScale();
 	}
 
 	public void startMeasure(T key)

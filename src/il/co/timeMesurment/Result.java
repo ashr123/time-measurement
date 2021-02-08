@@ -39,7 +39,7 @@ public class Result<T>
 
 	public double getTimeTaken(TimeScales timeScales)
 	{
-		return timeTaken / timeScales.scale;
+		return timeTaken / timeScales.getScale();
 	}
 
 	@Override

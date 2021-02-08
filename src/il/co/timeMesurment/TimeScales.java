@@ -9,7 +9,7 @@ public enum TimeScales
 	MINUTES(60D * SECONDS.scale),
 	HOURS(60D * MINUTES.scale),
 	DAYS(24D * HOURS.scale);
-	final double scale;
+	private final double scale;
 
 	double getScale()
 	{
