@@ -11,12 +11,17 @@ public class MapCounter<T>
 	{
 	}
 
+	public double getTimeTaken(T key)
+	{
+		return getTimeTaken(key, TimeScales.MILLISECONDS);
+	}
+
 	public double getTimeTaken(T key, TimeScales timeScales)
 	{
-		Long value = startTimes.get(key);
+		final Long value = startTimes.get(key);
 		if (value == null)
 			throw new IllegalStateException("Didn't start measuring yet!!");
-		return value / timeScales.scale;
+		return (System.nanoTime() - value) / timeScales.scale;
 	}
 
 	public void startMeasure(T key)
