@@ -23,6 +23,7 @@ public class DurationCounter
 	{
 		final long startTime = System.nanoTime();
 		runnable.run();
-		return new Result<>(startTime, System.nanoTime());
+		final long endTime = System.nanoTime();
+		return new Result<>(startTime, endTime);
 	}
 }
