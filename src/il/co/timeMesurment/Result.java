@@ -8,20 +8,20 @@ public class Result<T>
 	private final long timeTaken;
 	private final boolean isContainsResult;
 
-	Result(long timeTaken)
+	Result(long startTime, long endTime)
 	{
-		this(null, timeTaken, false);
+		this(startTime, null, endTime, false);
 	}
 
-	Result(T result, long timeTaken)
+	Result(long startTime, T result, long endTime)
 	{
-		this(result, timeTaken, true);
+		this(startTime, result, endTime, true);
 	}
 
-	private Result(T result, long timeTaken, boolean isContainsResult)
+	private Result(long startTime, T result, long endTime, boolean isContainsResult)
 	{
 		this.result = result;
-		this.timeTaken = timeTaken;
+		this.timeTaken = endTime - startTime;
 		this.isContainsResult = isContainsResult;
 	}
 

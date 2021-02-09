@@ -11,20 +11,18 @@ public class DurationCounter
 
 	public static <T> Result<T> measureAndExecute(Supplier<T> supplier)
 	{
-		final long startTime = System.nanoTime();
-		return new Result<>(supplier.get(), System.nanoTime() - startTime);
+		return new Result<>(System.nanoTime(), supplier.get(), System.nanoTime());
 	}
 
 	public static <T> Result<T> measureAndExecuteCallable(Callable<T> callable) throws Exception
 	{
-		final long startTime = System.nanoTime();
-		return new Result<>(callable.call(), System.nanoTime() - startTime);
+		return new Result<>(System.nanoTime(), callable.call(), System.nanoTime());
 	}
 
 	public static Result<Void> measureAndExecute(Runnable runnable)
 	{
 		final long startTime = System.nanoTime();
 		runnable.run();
-		return new Result<>(System.nanoTime() - startTime);
+		return new Result<>(startTime, System.nanoTime());
 	}
 }
