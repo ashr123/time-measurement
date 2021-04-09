@@ -9,17 +9,17 @@ public class DurationCounter
 	{
 	}
 
-	public static <T> Result<T> measureAndExecute(Supplier<T> supplier)
+	public static <T> Result<T> measureAndExecute(final Supplier<T> supplier)
 	{
 		return new Result<>(System.nanoTime(), supplier.get(), System.nanoTime());
 	}
 
-	public static <T> Result<T> measureAndExecuteCallable(Callable<T> callable) throws Exception
+	public static <T> Result<T> measureAndExecuteCallable(final Callable<T> callable) throws Exception
 	{
 		return new Result<>(System.nanoTime(), callable.call(), System.nanoTime());
 	}
 
-	public static Result<Void> measureAndExecute(Runnable runnable)
+	public static Result<Void> measureAndExecute(final Runnable runnable)
 	{
 		final long startTime = System.nanoTime();
 		runnable.run();

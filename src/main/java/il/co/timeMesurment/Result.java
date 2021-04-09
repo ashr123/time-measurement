@@ -8,17 +8,17 @@ public class Result<T>
 	private final long timeTaken;
 	private final boolean isContainsResult;
 
-	Result(long startTime, long endTime)
+	Result(final long startTime, final long endTime)
 	{
 		this(startTime, null, endTime, false);
 	}
 
-	Result(long startTime, T result, long endTime)
+	Result(final long startTime, final T result, final long endTime)
 	{
 		this(startTime, result, endTime, true);
 	}
 
-	private Result(long startTime, T result, long endTime, boolean isContainsResult)
+	private Result(final long startTime, final T result, final long endTime, final boolean isContainsResult)
 	{
 		this.result = result;
 		this.timeTaken = endTime - startTime;
@@ -47,9 +47,8 @@ public class Result<T>
 	{
 		if (this == o)
 			return true;
-		if (!(o instanceof Result))
+		if (!(o instanceof Result<?> result1))
 			return false;
-		Result<?> result1 = (Result<?>) o;
 		return timeTaken == result1.timeTaken &&
 		       isContainsResult == result1.isContainsResult &&
 		       Objects.equals(result, result1.result);
