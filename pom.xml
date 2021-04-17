@@ -6,7 +6,7 @@
 
 	<groupId>il.co</groupId>
 	<artifactId>time-mesurment</artifactId>
-	<version>1.0.3</version>
+	<version>1.0.4</version>
 
 	<properties>
 		<maven.compiler.source>16</maven.compiler.source>

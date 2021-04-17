@@ -11,13 +11,13 @@ public enum TimeScales
 	DAYS(24D * HOURS.scale);
 	private final double scale;
 
-	double getScale()
-	{
-		return scale;
-	}
-
 	TimeScales(double scale)
 	{
 		this.scale = scale;
+	}
+
+	double getScale()
+	{
+		return scale;
 	}
 }

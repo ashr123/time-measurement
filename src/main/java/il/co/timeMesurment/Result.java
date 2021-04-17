@@ -45,13 +45,11 @@ public class Result<T>
 	@Override
 	public boolean equals(Object o)
 	{
-		if (this == o)
-			return true;
-		if (!(o instanceof Result<?> result1))
-			return false;
-		return timeTaken == result1.timeTaken &&
-		       isContainsResult == result1.isContainsResult &&
-		       Objects.equals(result, result1.result);
+		return this == o ||
+				o instanceof Result<?> result &&
+						timeTaken == result.timeTaken &&
+						isContainsResult == result.isContainsResult &&
+						Objects.equals(this.result, result.result);
 	}
 
 	@Override
@@ -64,9 +62,9 @@ public class Result<T>
 	public String toString()
 	{
 		return "Result{" +
-		       "result=" + result +
-		       ", timeTaken=" + timeTaken +
-		       ", isContainsResult=" + isContainsResult +
-		       '}';
+				"result=" + result +
+				", timeTaken=" + timeTaken +
+				", isContainsResult=" + isContainsResult +
+				'}';
 	}
 }
