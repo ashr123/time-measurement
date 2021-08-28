@@ -1,4 +1,4 @@
-package il.co.timeMesurment;
+package il.co.ashr123.timeMesurment;
 
 import java.util.HashMap;
 import java.util.Map;

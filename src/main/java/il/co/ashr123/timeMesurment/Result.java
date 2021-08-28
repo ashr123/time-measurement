@@ -1,5 +1,6 @@
-package il.co.timeMesurment;
+package il.co.ashr123.timeMesurment;
 
+import java.util.NoSuchElementException;
 import java.util.Objects;
 
 public class Result<T>
@@ -29,7 +30,7 @@ public class Result<T>
 	{
 		if (isContainsResult)
 			return result;
-		throw new IllegalStateException("Doesn't have a result!");
+		throw new NoSuchElementException("No result present");
 	}
 
 	public double getTimeTaken()
