@@ -1,4 +1,4 @@
-package il.co.ashr123.timeMesurment;
+package io.github.ashr123.timeMeasurement;
 
 import java.util.concurrent.Callable;
 import java.util.function.Supplier;

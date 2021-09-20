@@ -1,4 +1,4 @@
-package il.co.ashr123.timeMesurment;
+package io.github.ashr123.timeMeasurement;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;
