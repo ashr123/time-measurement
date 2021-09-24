@@ -6,25 +6,24 @@
 
 	<groupId>io.github.ashr123</groupId>
 	<artifactId>time-measurement</artifactId>
-	<version>1.0.6</version>
+	<version>1.0.7</version>
 	<packaging>jar</packaging>
 
 	<name>Time Measurement</name>
 	<description>Small package that gives the ability to execute some code and measure how long it took</description>
-	<url>https://github.com/ashr123/time-measurement</url>
+	<url>https://github.com/ashr123/${project.artifactId}</url>
 
 	<licenses>
 		<license>
-			<name>GNU Affero General Public License v3.0</name>
-			<url>https://github.com/ashr123/time-measurement/blob/master/LICENSE</url>
+			<name>GNU AFFERO GENERAL PUBLIC LICENSE</name>
+			<url>${project.url}/blob/master/LICENSE</url>
 		</license>
 	</licenses>
 
-	<properties>
-		<maven.compiler.source>16</maven.compiler.source>
-		<maven.compiler.target>16</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
+	<scm>
+		<connection>scm:git:${project.url}.git</connection>
+		<url>${project.url}</url>
+	</scm>
 
 	<developers>
 		<developer>
@@ -36,16 +35,12 @@
 				<role>Software Engineer</role>
 			</roles>
 			<timezone>Asia/Jerusalem</timezone>
-			<properties>
-				<cellphone>+972546815181</cellphone>
-			</properties>
 		</developer>
 	</developers>
 
-	<scm>
-		<connection>scm:git:git://github.com/ashr123/time-measurement.git</connection>
-		<url>https://github.com/simpligility/ashr123/time-measurement</url>
-	</scm>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 
 	<distributionManagement>
 		<snapshotRepository>
@@ -65,6 +60,14 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.1</version>
+				<configuration>
+					<release>16</release>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>

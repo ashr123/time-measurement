@@ -26,18 +26,30 @@ public class Result<T>
 		this.isContainsResult = isContainsResult;
 	}
 
+	/**
+	 * @return the result of the given function, if the function didn't return any result, {@link NoSuchElementException} is thrown
+	 */
 	public T getResult()
 	{
 		if (isContainsResult)
 			return result;
-		throw new NoSuchElementException("No result present");
+		throw new NoSuchElementException("No result is present");
 	}
 
+	/**
+	 * @return the time took for the code to complete by default timescale of milliseconds
+	 * @see Result#getTimeTaken(TimeScales)
+	 */
 	public double getTimeTaken()
 	{
 		return getTimeTaken(TimeScales.MILLISECONDS);
 	}
 
+	/**
+	 * @param timeScales the required timescale
+	 * @return the time took for the code to complete by the given timescale
+	 * @see Result#getTimeTaken()
+	 */
 	public double getTimeTaken(TimeScales timeScales)
 	{
 		return timeTaken / timeScales.getScale();
