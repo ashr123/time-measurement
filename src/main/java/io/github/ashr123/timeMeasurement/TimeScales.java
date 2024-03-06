@@ -1,7 +1,6 @@
 package io.github.ashr123.timeMeasurement;
 
-public enum TimeScales
-{
+public enum TimeScales {
 	NANOSECONDS(1D),
 	MICROSECONDS(1000D * NANOSECONDS.scale),
 	MILLISECONDS(1000D * MICROSECONDS.scale),
@@ -11,13 +10,11 @@ public enum TimeScales
 	DAYS(24D * HOURS.scale);
 	private final double scale;
 
-	TimeScales(double scale)
-	{
+	TimeScales(double scale) {
 		this.scale = scale;
 	}
 
-	double getScale()
-	{
+	double getScale() {
 		return scale;
 	}
 }
