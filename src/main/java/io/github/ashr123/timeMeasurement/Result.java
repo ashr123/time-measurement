@@ -1,5 +1,6 @@
 package io.github.ashr123.timeMeasurement;
 
+import java.time.Duration;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
@@ -46,6 +47,10 @@ public class Result<T> {
 	 */
 	public double getTimeTaken(TimeScales timeScales) {
 		return timeTaken / timeScales.getScale();
+	}
+
+	public Duration toDuration() {
+		return Duration.ofNanos(timeTaken);
 	}
 
 	@Override
